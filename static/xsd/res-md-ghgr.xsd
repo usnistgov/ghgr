@@ -41,8 +41,8 @@
       <xs:element name="title" type="xs:string">
         <xs:annotation>
           <xs:appinfo>
-                 <label>Database's Full Name: </label>
-                 <tooltip>The full name given to the database</tooltip>
+                 <label>Resource's Full Name: </label>
+                 <tooltip>The full name given to the resource</tooltip>
                  <am:dcterm>Title</am:dcterm>
                  <am:dataciteproperty>Title</am:dataciteproperty>
                </xs:appinfo>
@@ -56,7 +56,7 @@
         <xs:annotation>
           <xs:appinfo>
                  <label>Subtitle: </label>
-                 <tooltip>A secondary title for the database (e.g. Standard Reference Data #27)</tooltip>
+                 <tooltip>A secondary title for the resource (e.g. Standard Reference Data #27)</tooltip>
                  <am:dcterm>Title</am:dcterm>
                  <am:dataciteproperty>Title</am:dataciteproperty>
                </xs:appinfo>
@@ -69,8 +69,8 @@
       <xs:element name="abbreviation" type="xs:string" minOccurs="0" maxOccurs="unbounded">
         <xs:annotation>
           <xs:appinfo>
-                 <label>Database's Abbreviation: </label>
-                 <tooltip>The initials, acronym, or other abbreviation that the database is commonly known as</tooltip>
+                 <label>Resource's Abbreviation: </label>
+                 <tooltip>The initials, acronym, or other abbreviation that the resource is commonly known as</tooltip>
                  <placeholder>e.g. initials, acronym, etc.</placeholder>
                  <am:dcterm>Title</am:dcterm>
                  <am:dataciteproperty>Title</am:dataciteproperty>
@@ -85,7 +85,7 @@
         <xs:annotation>
           <xs:appinfo>
                 <label>Publishing Institution: </label>
-                <tooltip>Enter the name of the metrology institute that provides this database</tooltip>
+                <tooltip>Enter the name of the metrology institute that provides this resource</tooltip>
                 <placholder>Metrology institute name</placholder>
                  <am:dcterm>Publisher</am:dcterm>
                  <am:dataciteproperty>publisher</am:dataciteproperty>
@@ -101,7 +101,7 @@
         <xs:annotation>
           <xs:appinfo>
                  <label>Publication Year: </label>
-                 <tooltip>The year the database was first released.</tooltip>
+                 <tooltip>The year the resource was first released.</tooltip>
                  <placeholder>Format: YYYY</placeholder>
                  <am:dataciteproperty>publicationYear</am:dataciteproperty>
                </xs:appinfo>
@@ -128,6 +128,9 @@
 
       <xs:element name="contact" type="rsm:Contact" maxOccurs="unbounded">
         <xs:annotation>
+            <xs:appinfo>
+                <label>Contact</label>
+            </xs:appinfo>
           <xs:documentation>
                  Information that can be used for contacting someone with
                  regard to this resource.
@@ -138,6 +141,8 @@
       <xs:element name="creator" type="rsm:Entity" minOccurs="0" maxOccurs="unbounded">
         <xs:annotation>
           <xs:appinfo>
+                 <label>Creator: </label>
+                 <tooltip>The person or organization that created the content or constitution of the resource</tooltip>
                  <am:dcterm>Creator</am:dcterm>
                  <am:dataciteproperty>creator</am:dataciteproperty>
                </xs:appinfo>
@@ -151,6 +156,8 @@
       <xs:element name="contributor" type="rsm:Contributor" minOccurs="0" maxOccurs="unbounded">
         <xs:annotation>
           <xs:appinfo>
+                 <label>Contributor: </label>
+                 <tooltip>The person or organization responsible for contributions made to the resource</tooltip>
                  <am:dcterm>Contributor</am:dcterm>
                  <am:dataciteproperty>contributor</am:dataciteproperty>
                </xs:appinfo>
@@ -165,10 +172,11 @@
         ns0:_mod_mdcs_="/registry/description">
         <xs:annotation>
           <xs:appinfo>
-                 <label>Give a summary of the contents of the database and how users may access it: </label>
-                 <am:dcterm>Description</am:dcterm>
-                 <am:datacite>description</am:datacite>
-               </xs:appinfo>
+              <label>Summary Description: </label>
+              <tooltip>Give a summary of the contents of the resource and how users may access it</tooltip>
+              <am:dcterm>Description</am:dcterm>
+              <am:datacite>description</am:datacite>
+          </xs:appinfo>
           <xs:documentation>
                  An account of the nature of the resource
                </xs:documentation>
@@ -188,9 +196,9 @@
       <xs:element name="subject" type="xs:string" maxOccurs="unbounded">
         <xs:annotation>
           <xs:appinfo>
-                 <label>Subject keyword: </label>
+                 <label>Subject Keyword: </label>
                  <placeholder>Enter a descriptive term; click the + to add additional keywords</placeholder>
-                 <tooltip>a descriptive term that this database relates to.  Choose terms that describe what measurements this database includes.</tooltip>
+                 <tooltip>a descriptive term that this resource relates to.  Choose terms that describe what measurements this resource includes.</tooltip>
                  <am:dcterm>Subject</am:dcterm>
                </xs:appinfo>
           <xs:documentation>
@@ -227,7 +235,7 @@
         <xs:annotation>
           <xs:appinfo>
               <label>Data Products: </label>
-              <tooltip>Click the green plus to select product types</tooltip>
+              <tooltip>Click the green plus to select data product types</tooltip>
             </xs:appinfo>
           <xs:documentation>
               the name of a data product generated
@@ -238,7 +246,7 @@
       <xs:element name="region" minOccurs="0" type="rsm:SpatialRegion">
         <xs:annotation>
           <xs:appinfo>
-              <label>Data-Relevant Region : </label>
+              <label>Relevant Region: </label>
               <tooltip>Enter the name of the Region for source of Greenhouse Gas.</tooltip>
               <tooltip>(e.g. Arctic, California, Indianapolis, Tri-State, ...)</tooltip>
             </xs:appinfo>
@@ -251,7 +259,7 @@
       <xs:element name="temporal" minOccurs="0" maxOccurs="unbounded" type="rsm:Temporal">
         <xs:annotation>
           <xs:appinfo>
-              <label>Data-Relevant Time Period : </label>
+              <label>Relevant Time Period: </label>
               <tooltip>Select the temporal range coverage.</tooltip>
             </xs:appinfo>
           <xs:documentation>
@@ -263,7 +271,7 @@
       <xs:element name="role" type="rsm:ResourceRole" minOccurs="1" maxOccurs="unbounded">
         <xs:annotation>
           <xs:appinfo>
-               <label>Role</label>
+               <label>Role: </label>
              </xs:appinfo>
           <xs:documentation>
                A label that identifies the type of resource this is along
@@ -286,7 +294,7 @@
       <xs:element name="access" type="rsm:Access">
         <xs:annotation>
           <xs:appinfo>
-                <label>Access Information</label>
+                <label>Access Information: </label>
               </xs:appinfo>
           <xs:documentation>
                 Information describing how to access the resource and its 
@@ -300,7 +308,7 @@
     <xs:attribute name="localid">
       <xs:annotation>
         <xs:appinfo>
-            <label>Local ID (do not change)</label>
+            <label>Local ID (do not change): </label>
           </xs:appinfo>
         <xs:documentation>
             An unambiguous identifier for this resource description as 
@@ -317,6 +325,9 @@
 
     <xs:attribute name="status" use="required">
       <xs:annotation>
+          <xs:appinfo>
+              <label>Status: </label>
+          </xs:appinfo>
         <xs:documentation>
               a tag indicating whether this resource is believed to be still
               actively maintained.
@@ -361,9 +372,10 @@
     </xs:annotation>
     <xs:restriction base="xs:token">
 
-      <xs:enumeration value="Energy">
+      <xs:enumeration value="Fossil Fuel">
         <xs:annotation>
-          <xs:documentation>            
+          <xs:documentation>
+              related to the production and consumption of fossil fuels
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -371,15 +383,7 @@
       <xs:enumeration value="Natural/Biological">
         <xs:annotation>
           <xs:documentation>
-            related to tests or techniques used to detect evidence of crime
-          </xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-
-      <xs:enumeration value="Forest/Grassland">
-        <xs:annotation>
-          <xs:documentation>
-            related to quantities characterizing fundemental physics 
+            related to natural and/or non-human biologic sources
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -387,8 +391,7 @@
       <xs:enumeration value="Anthropogenic">
         <xs:annotation>
           <xs:documentation>
-            related to an application area that is not sufficiently
-            covered by the other defined areas.  
+            related to human activities
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -408,15 +411,14 @@
   <xs:simpleType name="GasSpecies">
     <xs:annotation>
       <xs:documentation>
-        allowed values representing categories of material physical properties
+        allowed values representing specific gas species
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="CO">
         <xs:annotation>
           <xs:documentation>
-            property describes out a material interacts with electromagnetic 
-            radiation.
+            carbon monoxide
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -424,8 +426,7 @@
       <xs:enumeration value="CO2">
         <xs:annotation>
           <xs:documentation>
-            property describes a sample material's response to an external 
-            influence causing plastic deformation or destruction.
+            carbon dioxide
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -433,10 +434,7 @@
       <xs:enumeration value="CH4">
         <xs:annotation>
           <xs:documentation>
-            property describing a materials response to heat, including the 
-            transfer of heat through the material and thermophysical properties
-            (those that vary with temperature without changing the material's 
-            identity. 
+            methane
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -444,8 +442,7 @@
       <xs:enumeration value="N2O">
         <xs:annotation>
           <xs:documentation>
-            property describes a sample material's response to an external 
-            influence causing plastic deformation or destruction.
+            nitrous oxide
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -453,19 +450,18 @@
       <xs:enumeration value="Aerosols/VOC">
         <xs:annotation>
           <xs:documentation>
-            properties describing the relative locations of a material's 
-            constituent atoms or molecules. 
+            assorted aerosol chemicals and volatile organic compounds
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="other"/>
+      <xs:enumeration value="Other"/>
     </xs:restriction>
   </xs:simpleType>
 
   <xs:simpleType name="DataProducts">
     <xs:annotation>
       <xs:documentation>
-        allowed values representing categories of material physical properties
+        allowed values representing types of data published in the registry
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
@@ -514,10 +510,17 @@
         </xs:annotation>
       </xs:enumeration>
 
-      <xs:enumeration value="other">
+      <xs:enumeration value="Measurements">
         <xs:annotation>
           <xs:documentation>
-            related to an application area that is not sufficiently
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:documentation>
+            a data product categorization is not sufficiently
             covered by the other defined areas.  
           </xs:documentation>
         </xs:annotation>
@@ -529,7 +532,7 @@
   <xs:complexType name="SpatialRegion">
     <xs:annotation>
       <xs:documentation>
-        Text Description of Greenhouse Gas geophysical coverage area
+        Greenhouse Gas Project geophysical coverage area
       </xs:documentation>
     </xs:annotation>
 
@@ -540,7 +543,7 @@
             <label>Region: </label>
           </xs:appinfo>
           <xs:documentation>
-            Selectable geophysical regional area of coverage
+            Selectable pre-defined geophysical regional area of coverage
           </xs:documentation>
         </xs:annotation>
 
@@ -553,7 +556,7 @@
             <placeholder>e.g. USA, UK, Japan, ...</placeholder>
           </xs:appinfo>
           <xs:documentation>
-            This is a User specified Region of Coverage
+            A user-specified regional area of coverage
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -568,30 +571,71 @@
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:enumeration value="Northeast"/>
-      <xs:enumeration value="Northwest"/>
-      <xs:enumeration value="Southeast"/>
-      <xs:enumeration value="Southwest"/>
-      <xs:enumeration value="Midcontinent"/>
-      <xs:enumeration value="Rocky Mountain"/>
-      <xs:enumeration value="Alaska"/>
-      <xs:enumeration value="Other"/>
+    <xs:enumeration value="Northeast">
+      <xs:annotation>
+          <xs:documentation>
+          </xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="Northwest">
+        <xs:annotation>
+            <xs:documentation>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="Southeast">
+        <xs:annotation>
+            <xs:documentation>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="Southwest">
+        <xs:annotation>
+            <xs:documentation>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="Midcontinent">
+        <xs:annotation>
+            <xs:documentation>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="Rocky Mountain">
+        <xs:annotation>
+            <xs:documentation>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="Alaska">
+        <xs:annotation>
+            <xs:documentation>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="Other">
+        <xs:annotation>
+            <xs:documentation>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
 
   <xs:simpleType name="Temporal">
     <xs:annotation>
       <xs:documentation>
-        Time Range Doverage of Emissions
+        The time range of the emissions data
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="Before 2000"/>
-      <xs:enumeration value="2000-2004"/>
-      <xs:enumeration value="2005-2009"/>
-      <xs:enumeration value="2010-2014"/>
-      <xs:enumeration value="2015-2019"/>
-      <xs:enumeration value="2020-2024"/>
+      <xs:enumeration value="2000 to 2004"/>
+      <xs:enumeration value="2005 to 2009"/>
+      <xs:enumeration value="2010 to 2014"/>
+      <xs:enumeration value="2015 to 2019"/>
+      <xs:enumeration value="2020 to 2024"/>
+      <xs:enumeration value="Other"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -619,8 +663,8 @@
       <xs:element name="affiliation" minOccurs="0" maxOccurs="unbounded">
         <xs:annotation>
           <xs:appinfo>
-                 <label>Institutional affiliation: </label>
-                 <tooltip>Add if different from the database's publisher</tooltip>
+                 <label>Institutional Affiliation: </label>
+                 <tooltip>Add if different from the resource's publisher</tooltip>
                </xs:appinfo>
           <xs:documentation>
                   The person or entity's institutional affiliation at
@@ -634,7 +678,7 @@
           <xs:appinfo>
                  <label>ORCID identifier: http://orcid.org/</label>
                  <placeholder>Format: xxxx-xxxx-xxxx-xxxx</placeholder>
-                 <tooltip>Add if different from the database's publisher</tooltip>
+                 <tooltip>Add if different from the resource's publisher</tooltip>
                </xs:appinfo>
           <xs:documentation>
                   The person or entity's identifier
@@ -670,6 +714,10 @@
     <xs:sequence>
       <xs:element name="name" type="xs:string">
         <xs:annotation>
+            <xs:appinfo>
+                <label>Name: </label>
+                <tooltip>The person or entity's displayable name</tooltip>
+            </xs:appinfo>
           <xs:documentation>
                   The person or entity's displayable name
                </xs:documentation>
@@ -678,6 +726,10 @@
 
       <xs:element name="emailAddress" type="xs:string" minOccurs="1" maxOccurs="unbounded">
         <xs:annotation>
+            <xs:appinfo>
+                <label>Email Address: </label>
+                <tooltip>An email address for the resource's contact</tooltip>
+            </xs:appinfo>
           <xs:documentation>the contact email address</xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -686,6 +738,9 @@
 
   <xs:complexType name="Contributor">
     <xs:annotation>
+        <xs:appinfo>
+            <label>Contributor: </label>
+        </xs:appinfo>
       <xs:documentation>
          a contributor that plays one of the roles defined by the
          datacite metadata schema.  
@@ -695,6 +750,9 @@
     <xs:sequence>
       <xs:element name="name" type="xs:token">
         <xs:annotation>
+            <xs:appinfo>
+                <label>Name: </label>
+            </xs:appinfo>
           <xs:documentation>
                   The person or entity's displayable name
                </xs:documentation>
@@ -703,6 +761,11 @@
 
       <xs:element name="affiliation" minOccurs="0" maxOccurs="unbounded">
         <xs:annotation>
+            <xs:appinfo>
+                <label>Institutional Affiliation: </label>
+                <tooltip>The person or entity's institutional affiliation at
+                    the time their contribution was made</tooltip>
+            </xs:appinfo>
           <xs:documentation>
                   The person or entity's institutional affiliation at
                   the time their contribution was made
@@ -726,6 +789,9 @@
 
     <xs:attribute name="type" type="rsm:ContributorType" use="required">
       <xs:annotation>
+          <xs:appinfo>
+              <label>Type: </label>
+          </xs:appinfo>
         <xs:documentation>
                 a label indicating the contribution that this person
                 or organization made to the resource.
@@ -1485,6 +1551,9 @@
 
   <xs:complexType name="Download">
     <xs:annotation>
+        <xs:appinfo>
+            <label>Download: </label>
+        </xs:appinfo>
       <xs:documentation>
          details on how data can be downloaded
        </xs:documentation>
@@ -1552,8 +1621,8 @@
   <xs:complexType name="Organization">
     <xs:annotation>
       <xs:documentation>
-         a searchable collection of tabular or property-oriented data
-       </xs:documentation>
+          A group of people or aggregate of participants (broader)
+      </xs:documentation>
     </xs:annotation>
 
     <xs:complexContent>
@@ -1562,12 +1631,11 @@
           <xs:element name="type" type="rsm:OrgRoleType" minOccurs="1" maxOccurs="1">
             <xs:annotation>
               <xs:appinfo>
-                 <label>Type</label>
+                 <label>Type: </label>
                </xs:appinfo>
               <xs:documentation>
-                 It is recommended that the pid attribute be set to
-                 http://purl.org/dc/dcmitype/Dataset.  
-               </xs:documentation>
+                  the sub-type of organization this resource qualifies as.
+              </xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -1579,7 +1647,7 @@
     <xs:annotation>
       <xs:documentation>
          Controlled labels that indicate a type of role this resource can
-         play as a dataset.
+         play as an organization.
        </xs:documentation>
     </xs:annotation>
 
@@ -1605,7 +1673,7 @@
       <xs:enumeration value="Organization">
         <xs:annotation>
           <xs:documentation>
-             A logical set of related data supporting a common scientific purpose
+              A group of people or aggregate of participants (broader)
            </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -1615,6 +1683,9 @@
 
   <xs:complexType name="DataCollection">
     <xs:annotation>
+        <xs:appinfo>
+            <label>Data Collection</label>
+        </xs:appinfo>
       <xs:documentation>
          a resource that aggregates and makes accessible many datasets together
          as part of a collection.  
@@ -1624,10 +1695,10 @@
     <xs:complexContent>
       <xs:extension base="rsm:ResourceRole">
         <xs:sequence>
-          <xs:element name="type" type="rsm:CollectionRoleType" minOccurs="1" maxOccurs="3">
+          <xs:element name="type" type="rsm:CollectionRoleType" minOccurs="1" maxOccurs="1">
             <xs:annotation>
               <xs:appinfo>
-                 <label>Type</label>
+                 <label>Type: </label>
                </xs:appinfo>
               <xs:documentation>
                  the sub-type of collection this resource qualifies as.
@@ -1660,7 +1731,7 @@
       <xs:enumeration value="Collection: Repository">
         <xs:annotation>
           <xs:documentation>
-             An aggregation of data sets 
+             An aggregation of items in one centralized searchable resource 
            </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -1668,10 +1739,19 @@
       <xs:enumeration value="Collection: Project Archive">
         <xs:annotation>
           <xs:documentation>
-             An aggregation of data sets 
+             An aggregation of data sets representing the completed results of 
+             a project
            </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+    
+      <xs:enumeration value="Collection: Database">
+          <xs:annotation>
+            <xs:documentation>
+                A searchable collection of tabular or property-oriented data
+            </xs:documentation>
+        </xs:annotation>
+    </xs:enumeration>
 
     </xs:restriction>
   </xs:simpleType>
@@ -1679,7 +1759,7 @@
   <xs:complexType name="Dataset">
     <xs:annotation>
       <xs:documentation>
-         a searchable collection of tabular or property-oriented data
+         a set of collected, simulated, or otherwise notable scientific data
        </xs:documentation>
     </xs:annotation>
 
@@ -1689,11 +1769,10 @@
           <xs:element name="type" type="rsm:DatasetRoleType" minOccurs="1" maxOccurs="2">
             <xs:annotation>
               <xs:appinfo>
-                 <label>Type</label>
+                 <label>Type: </label>
                </xs:appinfo>
               <xs:documentation>
-                 It is recommended that the pid attribute be set to
-                 http://purl.org/dc/dcmitype/Dataset.  
+                  the sub-type of dataset this resource qualifies as.
                </xs:documentation>
             </xs:annotation>
           </xs:element>
@@ -1720,65 +1799,19 @@
         </xs:annotation>
       </xs:enumeration>
 
-      <xs:enumeration value="Dataset: Database">
+<!-- JAT: Database is its own resource type, so should not be a subtype of dataset     
+    <xs:enumeration value="Dataset: Database">
         <xs:annotation>
           <xs:documentation>
              A logical set of related data supporting a common scientific purpose
            </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-
+-->
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:complexType name="Database">
-    <xs:annotation>
-      <xs:documentation>
-         a searchable collection of tabular or property-oriented data
-       </xs:documentation>
-    </xs:annotation>
-
-    <xs:complexContent>
-      <xs:extension base="rsm:ResourceRole">
-        <xs:sequence>
-          <xs:element name="type" type="rsm:DatabaseRoleType" minOccurs="1" maxOccurs="1">
-            <xs:annotation>
-              <xs:appinfo>
-                 <label>Type</label>
-               </xs:appinfo>
-              <xs:documentation>
-                 It is recommended that the pid attribute be set to
-                 http://purl.org/dc/dcmitype/Dataset.  
-               </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:simpleType name="DatabaseRoleType">
-    <xs:annotation>
-      <xs:documentation>
-         Controlled labels that indicate a type of role this resource can
-         play as a dataset.
-       </xs:documentation>
-    </xs:annotation>
-
-    <xs:restriction base="xs:token">
-
-      <xs:enumeration value="Dataset: Database">
-        <xs:annotation>
-          <xs:documentation>
-             A logical set of related data supporting a common scientific purpose
-           </xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:complexType name="ServiceAPI">
+  <xs:complexType name="Service">
     <xs:annotation>
       <xs:documentation>
          metadata for describing a web-accessible service whose operations
@@ -1793,10 +1826,10 @@
           <xs:element name="type" type="rsm:ServiceRoleType">
             <xs:annotation>
               <xs:appinfo>
-                 <label>Type</label>
+                 <label>Type: </label>
                </xs:appinfo>
               <xs:documentation>
-                  a label that indicates the kind of resource it is.
+                  a label that indicates the kind of Service it is.
                 </xs:documentation>
             </xs:annotation>
           </xs:element>
@@ -1804,7 +1837,9 @@
           <xs:element name="baseURL" type="xs:anyURI" minOccurs="0">
             <xs:annotation>
               <xs:appinfo>
-                  <label>Base URL</label>
+                  <label>Base URL: </label>
+                  <tooltip>The base URL for accessing the service API</tooltip>
+                  <placeholder>https://...</placeholder>
                 </xs:appinfo>
               <xs:documentation>
                   The base URL for accessing the service API; it is expected that
@@ -1817,8 +1852,11 @@
           <xs:element name="documentationURL" type="xs:anyURI" minOccurs="0">
             <xs:annotation>
               <xs:appinfo>
-                  <label>URL where the API is documented</label>
-                </xs:appinfo>
+                  <label>Documentation URL: </label>
+                  <tooltip>A URL that points to a human-readable document that
+                      specifically describes how to use the API</tooltip>
+                  <placeholder>https://...</placeholder>
+              </xs:appinfo>
               <xs:documentation>
                    a URL that points to a human-readable document that
                    specifically describes how to use the API.
@@ -1829,8 +1867,11 @@
           <xs:element name="specificationURL" type="xs:anyURI" minOccurs="0">
             <xs:annotation>
               <xs:appinfo>
-                  <label>Specification URL</label>
-                </xs:appinfo>
+                  <label>Specification URL: </label>
+                  <tooltip>A URL that will retrieve a structured description of the
+                      service interface (e.g. WSDL, ...)</tooltip>
+                  <placeholder>https://...</placeholder>
+              </xs:appinfo>
               <xs:documentation>
                    a URL that will retrieve a structured description of the
                    service interface (e.g. WSDL, ...).
@@ -1841,8 +1882,11 @@
           <xs:element name="complianceID" type="xs:anyURI" minOccurs="0">
             <xs:annotation>
               <xs:appinfo>
-                  <label>Compliance ID</label>
-                </xs:appinfo>
+                  <label>Compliance ID: </label>
+                  <tooltip>A URI for a service standard that this service is 
+                      compliant with</tooltip>
+                  <placeholder>https://...</placeholder>
+              </xs:appinfo>
               <xs:documentation>
                    a URI for a service standard that this service is 
                    compliant with.
@@ -1870,7 +1914,7 @@
         <xs:annotation>
           <xs:documentation>
              A label indicating that this record describes a web-based
-             service API.
+             service application programming interface.
            </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -1881,7 +1925,7 @@
   <xs:complexType name="Software">
     <xs:annotation>
       <xs:documentation>
-         metadata for describing software
+         metadata for describing computer software
        </xs:documentation>
     </xs:annotation>
 
@@ -1892,10 +1936,11 @@
           <xs:element name="type" type="rsm:SoftwareRoleType">
             <xs:annotation>
               <xs:appinfo>
-                 <label>Type</label>
+                 <label>Type: </label>
                </xs:appinfo>
               <xs:documentation>
-                  a label that indicates the kind of resource it is.
+                  a label that indicates the kind of software
+                  it is.
                 </xs:documentation>
             </xs:annotation>
           </xs:element>
@@ -1903,7 +1948,10 @@
           <xs:element name="codeLanguage" type="xs:token" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:appinfo>
-                 <label>Code Language Used</label>
+                 <label>Code Language: </label>
+                  <tooltip>The name of the code language that the software is implemented
+                      in</tooltip>
+                  <placeholder>e.g.; Python, C, Java, FORTRAN, etc.</placeholder>
                </xs:appinfo>
               <xs:documentation>
                  The name of the code language that the software is implemented
@@ -1915,7 +1963,9 @@
           <xs:element name="supportedSystem" type="rsm:OpSystem" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:appinfo>
-                 <label>Supported Operating System (OS)</label>
+                 <label>Supported Operating System (OS): </label>
+                  <tooltip>A supported operating system that the software
+                      can be installed on</tooltip>
                </xs:appinfo>
               <xs:documentation>
                  A supported operating system that the software
@@ -1927,7 +1977,8 @@
           <xs:element name="licenseName" type="xs:token" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:appinfo>
-                 <label>Name of license applied to the software</label>
+                 <label>License: </label>
+                 <tooltip>Name of the license applied to the software</tooltip>
                  <placeholder>e.g. GNUv2, BSD, etc.; see also Terms URL under "Access"</placeholder>
                </xs:appinfo>
               <xs:documentation>
@@ -1939,7 +1990,7 @@
           <xs:element name="feature" type="xs:token" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:appinfo>
-                 <label>Highlighted feature</label>
+                 <label>Highlighted feature: </label>
                  <tooltip>Provide a brief description of a key feature of the software</tooltip>
                  <placeholder>e.g., based on the X algorithm</placeholder>
                </xs:appinfo>
@@ -1956,7 +2007,9 @@
           <xs:element name="documentation" type="rsm:SWDocLink" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:appinfo>
-                 <label>Link to Documentation</label>
+                 <label>Documentation Link: </label>
+                  <tooltip>A web link to the software's documentation</tooltip>
+                  <placeholder>https://...</placeholder>
                </xs:appinfo>
               <xs:documentation>
                  A web link to the software's documentation.
@@ -1967,7 +2020,10 @@
           <xs:element name="validationInfo" type="rsm:Link" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:appinfo>
-                 <label>Link to Validation Information</label>
+                 <label>Validation Information: </label>
+                  <tooltip>A web link to information about how the software is
+                  or was validated</tooltip>
+                  <placeholder>https://...</placeholder>
                </xs:appinfo>
               <xs:documentation>
                  A web link to the information about how the software is or
@@ -1980,7 +2036,10 @@
             maxOccurs="unbounded">
             <xs:annotation>
               <xs:appinfo>
-                 <label>Link to an export control statement</label>
+                 <label>Export Control Statement: </label>
+                  <tooltip>A web link to a statement of any export control rules that 
+                      apply to this software</tooltip>
+                  <placeholder>https://...</placeholder>
                </xs:appinfo>
               <xs:documentation>
                  A web link to a statement of any export control rules that 
@@ -1993,8 +2052,9 @@
             ns0:_mod_mdcs_="/registry/description" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:appinfo>
-                 <label>Briefly describe software's inputs and outputs</label>
-                 <placeholder>Describe the input data the software operates on and the output data it produces...</placeholder>
+                 <label>Inputs and Outputs</label>
+                  <tooltip>Describe the input data the software operates on and the output data it produces</tooltip>
+                  <placeholder>The software's inputs and outputs</placeholder>
                </xs:appinfo>
               <xs:documentation>
                  A description of the data inputs and outputs for the software.
@@ -2006,7 +2066,9 @@
             ns0:_mod_mdcs_="/registry/description" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:appinfo>
-                 <label>Provide any notes, caveats requirements, or recommendations for installing and using this software</label>
+                  <label>Use Notes: </label>
+                 <tooltip>Provide any notes, caveats requirements, or 
+                     recommendations for installing and using this software</tooltip>
                </xs:appinfo>
               <xs:documentation>
                  Micellaneous notes regarding the installation or use of this
@@ -2025,6 +2087,61 @@
 
   </xs:complexType>
 
+    <xs:complexType name="Website">
+        <xs:annotation>
+            <xs:documentation>
+                an online web-accessible page of information
+            </xs:documentation>
+        </xs:annotation>
+        
+        <xs:complexContent>
+            <xs:extension base="rsm:ResourceRole">
+                <xs:sequence>
+                    <xs:element name="type" type="rsm:SiteRoleType" minOccurs="1" maxOccurs="2">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <label>Type: </label>
+                            </xs:appinfo>
+                            <xs:documentation>
+                                the sub-type of website this resource qualifies as.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:simpleType name="SiteRoleType">
+        <xs:annotation>
+            <xs:documentation>
+                Controlled labels that indicate a type of role this resource can
+                play as a web site.
+            </xs:documentation>
+        </xs:annotation>
+        
+        <xs:restriction base="xs:token">
+            
+            <xs:enumeration value="Web Site: Interactive Resource: Portal">
+                <xs:annotation>
+                    <xs:documentation>
+                        A web site that provides a suite of tool for interacting with 
+                        a variety of data.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            
+            <xs:enumeration value="Web Site: Informational">
+                <xs:annotation>
+                    <xs:documentation>
+                        A web site that provides information to users
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            
+        </xs:restriction>
+    </xs:simpleType>
+
   <xs:complexType name="Link">
     <xs:annotation>
       <xs:documentation>
@@ -2036,7 +2153,9 @@
       <xs:element name="url">
         <xs:annotation>
           <xs:appinfo>
-             <label>Link URL</label>
+             <label>Link URL: </label>
+              <tooltip>The URL for the link</tooltip>
+              <placeholder>https://...</placeholder>
            </xs:appinfo>
           <xs:documentation>
              The link's URL
@@ -2047,8 +2166,9 @@
       <xs:element name="caption" minOccurs="0">
         <xs:annotation>
           <xs:appinfo>
-             <label>Link description</label>
-             <placeholder>Enter a Brief title or label indicating what the URL points to</placeholder>
+             <label>Link description: </label>
+             <tooltip>A brief title or label indicating what the URL points to</tooltip>
+              <placeholder>e.g.; the link's title</placeholder>
            </xs:appinfo>
           <xs:documentation>
              A brief label that describes what document is pointed to by the
@@ -2071,7 +2191,9 @@
       <xs:element name="url">
         <xs:annotation>
           <xs:appinfo>
-             <label>Documentation URL</label>
+             <label>Documentation URL: </label>
+              <tooltip>A web link to the software's documentation</tooltip>
+              <placeholder>https://...</placeholder>
            </xs:appinfo>
           <xs:documentation>
              The link's URL
@@ -2082,7 +2204,8 @@
       <xs:element name="caption" minOccurs="0">
         <xs:annotation>
           <xs:appinfo>
-             <label>Type of documentation</label>
+             <label>Type of documentation: </label>
+              <tooltip>A brief label that describes what document is pointed to by the link</tooltip>
              <placeholder>e.g. manual, API, tutorial, etc.</placeholder>
            </xs:appinfo>
           <xs:documentation>
@@ -2107,7 +2230,7 @@
       <xs:element name="osName" type="xs:token">
         <xs:annotation>
           <xs:appinfo>
-             <label>OS Name</label>
+             <label>OS Name: </label>
              <placeholder>e.g. Windows, Mac, Linux, Ubuntu, Solaris, etc.</placeholder>
            </xs:appinfo>
           <xs:documentation>
@@ -2119,7 +2242,7 @@
       <xs:element name="osVersion" type="xs:token" minOccurs="0" maxOccurs="unbounded">
         <xs:annotation>
           <xs:appinfo>
-             <label>OS Version</label>
+             <label>OS Version: </label>
              <placeholder>e.g. Vista, X, 8+, 14.01, etc.; add more with + as needed.</placeholder>
            </xs:appinfo>
           <xs:documentation>
@@ -2145,63 +2268,6 @@
         <xs:annotation>
           <xs:documentation>
              A label indicating that this resource is a software package
-           </xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:complexType name="WebSite">
-    <xs:annotation>
-      <xs:documentation>
-         a searchable collection of tabular or property-oriented data
-       </xs:documentation>
-    </xs:annotation>
-
-    <xs:complexContent>
-      <xs:extension base="rsm:ResourceRole">
-        <xs:sequence>
-          <xs:element name="type" type="rsm:SiteRoleType" minOccurs="1" maxOccurs="2">
-            <xs:annotation>
-              <xs:appinfo>
-                 <label>Type</label>
-               </xs:appinfo>
-              <xs:documentation>
-                 It is recommended that the pid attribute be set to
-                 http://purl.org/dc/dcmitype/Dataset.  
-               </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:simpleType name="SiteRoleType">
-    <xs:annotation>
-      <xs:documentation>
-         Controlled labels that indicate a type of role this resource can
-         play as a web site.
-       </xs:documentation>
-    </xs:annotation>
-
-    <xs:restriction base="xs:token">
-
-      <xs:enumeration value="Web Site: InteractiveResource: Portal">
-        <xs:annotation>
-          <xs:documentation>
-             A web site that provides a suite of tool for interacting with 
-             a variety of data.
-           </xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-
-      <xs:enumeration value="Web Site: Informational">
-        <xs:annotation>
-          <xs:documentation>
-             A web site that provides a suite of tool for interacting with 
-             a variety of data.
            </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -2238,9 +2304,9 @@
           <xs:element name="url" type="xs:string">
             <xs:annotation>
               <xs:appinfo>
-                  <label>Database home page URL: </label>
+                  <label>Resource Home Page URL: </label>
                   <placeholder>http://...</placeholder>
-                  <tooltip>the primary URL where the database can be accessed.</tooltip>
+                  <tooltip>the primary URL where the resource can be accessed.</tooltip>
                 </xs:appinfo>
             </xs:annotation>
           </xs:element>

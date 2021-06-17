@@ -6,40 +6,45 @@ SERVER_URI = os.environ["SERVER_URI"] if "SERVER_URI" in os.environ else None
 
 # Website customization
 WEBSITE_SHORT_TITLE = "GHGR"
-CUSTOM_DATA='Green House Gas Data'
-CUSTOM_TITLE='Greenhouse Gases Data Resource Registry'
-CUSTOM_SUBTITLE='A Collaboration of GHG Research Organizations'
-CUSTOM_NAME = os.environ["SERVER_NAME"] if "SERVER_NAME" in os.environ else "Nist GHGR"
+CUSTOM_TITLE = "Greenhouse Gas Resource Registry"
+CUSTOM_SUBTITLE = "A Collaboration of GHG Research Organizations"
+CUSTOM_NAME = os.environ["SERVER_NAME"] if "SERVER_NAME" in os.environ else "GHGR"
+CUSTOM_CURATE = 'Submit a Resource'
+CUSTOM_DATA = "Green House Gas Data"
 CURATE_MENU_NAME = "Publish resource"
 EXPLORE_MENU_NAME = "Search for resources"
 WORKSPACE_DISPLAY_NAME = "workspace"
 WEBSITE_ADMIN_COLOR = "blue"
 # black, black-light, blue, blue-light, green, green-light, purple, purple-light, red, red-light, yellow, yellow-light
 
-SAML2_AUTH = {
-    # Metadata is required, choose either remote url or local file path
-    'METADATA_AUTO_CONF_URL': 'https://sts2.nist.gov/federationmetadata/2007-06/federationmetadata.xml',
-    'METADATA_LOCAL_FILE_PATH': '/srv/curator/federationmetadata.xml',
+# TEAM_NAME = "Educational Outreach Working Group"
+# TEAM_EMAIL = "EO-WG@list.nist.gov"
 
-    # Optional settings below
-    'DEFAULT_NEXT_URL': '/',  # Custom target redirect URL after the user get logged in. Default to /admin if not set. This setting will be overwritten if you have parameter ?next= specificed in the login URL.
-    'CREATE_USER': False, # Create a new Django user when a new user logs in. Defaults to True.
-    'ATTRIBUTES_MAP': {  # Change Email/UserName/FirstName/LastName to corresponding SAML2 userprofile attributes.
-        'email': 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress',
-        'username': 'http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname',
-        'first_name': 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname',
-        'last_name': 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname',
-    },
-    'ASSERTION_URL': 'https://test-ghgr.nist.gov', # Custom URL to validate incoming SAML requests against
-    'ENTITY_ID': 'https://test-ghgr.nist.gov/saml2_auth/acs/', # Populates the Issuer element in authn request
-    'NAME_ID_FORMAT': 'urn:oasis:names:tc:SAML:2.0:nameid-format:transient', # Sets the Format property of authn NameIDPolicy element
-    'USE_JWT': False,
-    'SAML_CLIENT_SETTINGS': False,
-    'SIGNOUT_SLO': {
-        'CERT':  '/srv/curator/certs/test-ghgr.nist.gov-self.crt',
-        'KEY':   '/srv/curator/certs/test-ghgr.nist.gov-self.key'
-    }
-}
+# SAML2_AUTH = {
+#     # Metadata is required, choose either remote url or local file path
+#     'METADATA_AUTO_CONF_URL': 'https://sts2.nist.gov/federationmetadata/2007-06/federationmetadata.xml',
+#     'METADATA_LOCAL_FILE_PATH': '/srv/curator/federationmetadata.xml',
+
+#     # Optional settings below
+#     'DEFAULT_NEXT_URL': '/',  # Custom target redirect URL after the user get logged in. Default to /admin if not set. This setting will be overwritten if you have parameter ?next= specificed in the login URL.
+#     'CREATE_USER': False, # Create a new Django user when a new user logs in. Defaults to True.
+#     'ATTRIBUTES_MAP': {  # Change Email/UserName/FirstName/LastName to corresponding SAML2 userprofile attributes.
+#         'email': 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress',
+#         'username': 'http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname',
+#         'first_name': 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname',
+#         'last_name': 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname',
+#     },
+#     'ASSERTION_URL': 'https://test-ghgr.nist.gov', # Custom URL to validate incoming SAML requests against
+#     'ENTITY_ID': 'https://test-ghgr.nist.gov/saml2_auth/acs/', # Populates the Issuer element in authn request
+#     'NAME_ID_FORMAT': 'urn:oasis:names:tc:SAML:2.0:nameid-format:transient', # Sets the Format property of authn NameIDPolicy element
+#     'USE_JWT': False,
+#     'SAML_CLIENT_SETTINGS': False,
+#     'SIGNOUT_SLO': {
+#         'CERT':  '/srv/curator/certs/test-ghgr.nist.gov-self.crt',
+#         'KEY':   '/srv/curator/certs/test-ghgr.nist.gov-self.key'
+#     }
+# }
+
 
 #DATA_SOURCES_EXPLORE_APPS = ["core_explore_oaipmh_app"]
 
@@ -105,7 +110,7 @@ DISPLAY_CONTACT_FOOTER = True
 DISPLAY_HELP_FOOTER = True
 """ boolean: display the help link in the footer
 """
-DISPLAY_RULES_OF_BEHAVIOR_FOOTER = True
+DISPLAY_RULES_OF_BEHAVIOR_FOOTER = False
 """ boolean: display the rules of behavior link in the footer
 """
 
@@ -139,7 +144,7 @@ AUTO_SET_PID = True
 """ boolean: enable the automatic pid generation for saved data.
 """
 
-REGISTRY_XSD_FILENAME = "ghg-res-md.xsd"
+REGISTRY_XSD_FILENAME = "res-md-ghgr.xsd"
 """ str: Registry xsd filename used for the initialisation.
 """
 
@@ -149,7 +154,7 @@ REGISTRY_XSD_FILEPATH = os.path.join("xsd", REGISTRY_XSD_FILENAME)
 """
 
 # If you want to use your own configuration file, set your configuration file here
-CUSTOM_REGISTRY_FILE_PATH = os.path.join("json", "ghg-config.json")
+CUSTOM_REGISTRY_FILE_PATH = os.path.join("json", "ghgr-config.json")
 """ str: Custom registry configuration file path used for the initialisation.
 """
 

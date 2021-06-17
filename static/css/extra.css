@@ -69,3 +69,36 @@
     font-family: 'Source Sans Pro', sans-serif !important;
 }
 /* End fontawesome overide */
+
+
+/* ERR customizations */
+
+.resource-container {
+    /* make important so it doesn't get overridden by resource_banner.css */
+    width: 8em !important;
+}
+
+.resource-container p {
+    margin-top: .5em !important;
+}
+
+li > a > i {
+    /* add some spacing to icons in top nav */
+    margin-right: .5em;
+    margin-left: .5em;
+}
+
+/* make school subject facet not so tall */
+div#collapse_id_refinement-school-subject,
+div#collapse_id_refinement-educational-standard {
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+p {
+    margin-bottom: 0.5em;
+}
+
+.tile .icon {
+    margin-top: 0.9em !important;
+}

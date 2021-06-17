@@ -96,7 +96,7 @@ def tiles(request):
                             custom_resource.role_type.split(":")[0], refinement.id
                         ),
                         "title": custom_resource.title,
-                        "text": "Click here to explore the {0}.".format(
+                        "text": "Click to discover {0}s.".format(
                             custom_resource.title
                         ),
                     }
