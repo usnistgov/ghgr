@@ -1,0 +1,75 @@
+{% load staticfiles %}
+{% load stripjs %}
+<div class="row">
+    <div class="col-md-12">
+		<h2>Help</h2>
+
+		<div class="left word-wrap">
+			{% if data.help %}
+				{{ data.help.content | stripjs }}
+			{% else %}
+				<div class="left large">
+					<p>
+					  <a href="#What-is-the-Curation-System">What is {{CUSTOM_NAME}}?</a><br/>
+					  <a href="#How-do-I-get-access">How do I get access to {{CUSTOM_NAME}}?</a><br/>
+					  <a href="#What-are-activities">What are some of the activities I can do in {{CUSTOM_NAME}}?</a><br/>
+					  <a href="#Can-I-use-RESTful-API">Can I use {{CUSTOM_NAME}} using a RESTful API?</a><br/>
+                      <a href="#How-can-I-get-help">How do I get help with questions?</a><br/>
+					</p>
+				</div>
+				<div class="clearer">&nbsp;</div>
+				<hr/>
+				<br/>
+
+				<h3 id="What-is-the-Curation-System">What is {{CUSTOM_NAME}}?</h3>
+				<p class="large">
+					{{CUSTOM_NAME}} (the {{CUSTOM_TITLE}}) is a collection
+                    of Greenhouse Gas Research Data 
+                    resources published by <a href="https://nist.gov" target="_blank">NIST</a>
+                    researchers and collaborators. The system allows for browsing and 
+					exploring these resources by many different facets.
+				</p>
+
+				<div class="clearer">&nbsp;</div>
+
+				<h3 id="How-do-I-get-access">How do I get access to {{CUSTOM_NAME}}?</h3>
+				<p class="large">
+					Resources contained within the {{CUSTOM_NAME}} registry are visible 
+                    to anyone without needing to create an account or logging in.
+                    If you wish to contribute or add a resource, please contact
+					the <a href="{% url 'core_website_app_contact' %}">administrators</a>. 
+				</p>
+
+				<div class="clearer">&nbsp;</div>
+
+				<h3 id="What-are-activities">What are some of the activities I can do in {{CUSTOM_NAME}}?</h3>
+				<p class="large">
+					Any unregistered user can browse, search, and explore the data resources
+					contained in the registry.
+                    Registered users can submit resources for inclusion in the registry,
+                    which will then be reviewed by the {{CUSTOM_TITLE}} team
+                    prior to publication in the registry.
+				</p>
+
+				<div class="clearer">&nbsp;</div>
+
+				<h3 id="Can-I-use-RESTful-API">Can I access data from {{CUSTOM_NAME}} using a RESTful API?</h3>
+				<p class="large">
+					Yes, {{CUSTOM_NAME}} supports RESTful APIs. The {{CUSTOM_NAME}} 
+                    <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">
+                    REST API </a> allows for integration with other Web services, and automated data entry,
+					query, and retrieval. The REST API documentation can be accessed <a href="{% url 'swagger_view'%}">here</a>.
+				</p>
+
+				<div class="clearer">&nbsp;</div>
+
+                <h3 id="How-can-I-get-help">How do I get help with questions?</h3>
+                <p class="large">
+                    Please contact the administrators of the {{CUSTOM_TITLE}}
+                    with any questions about the registry using the 
+                    <a href="{% url 'core_website_app_contact' %}">contact form</a>. 
+                </p>
+			{% endif %}
+		</div>
+	</div>
+</div>
