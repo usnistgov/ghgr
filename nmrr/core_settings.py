@@ -17,6 +17,25 @@ WORKSPACE_DISPLAY_NAME = "workspace"
 WEBSITE_ADMIN_COLOR = "blue"
 # black, black-light, blue, blue-light, green, green-light, purple, purple-light, red, red-light, yellow, yellow-light
 
+SEND_EMAIL_WHEN_ACCOUNT_REQUEST_IS_ACCEPTED = True
+""" boolean: send an email when an account is accepted
+"""
+SEND_EMAIL_WHEN_ACCOUNT_REQUEST_IS_DENIED = True
+""" boolean: send an email when an account is denied
+"""
+
+USE_EMAIL = True
+SERVER_EMAIL = ' gretchen.green@nist.gov'
+ADMINS = [('grg2', ' gretchen.greene@nist.gov'),('bagwill', 'robert.bagwill@nist.gov'),('mnewrock','mnewrock@nist.gov')]
+MANAGERS = [('grg2', ' gretchen.greene@nist.gov'),('bagwill', 'robert.bagwill@nist.gov'),('mnewrock','mnewrock@nist.gov')]
+EMAIL_SUBJECT_PREFIX = "[GHG Registry]"
+EMAIL_HOST = "smtp.nist.gov"
+EMAIL_POST = 25
+DATA_AUTO_PUBLISH = True
+WEBSITE_ADMIN_COLOR = "blue-light"
+
+
+
 # TEAM_NAME = "Educational Outreach Working Group"
 # TEAM_EMAIL = "EO-WG@list.nist.gov"
 
